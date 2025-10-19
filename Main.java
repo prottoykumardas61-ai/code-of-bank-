@@ -1,39 +1,62 @@
-import java.util.*;
+class Shape {
+}
 
-class Bank {
-    String name;
-    int id;
-    int balance;
+class TwoD extends Shape {
+}
 
-    Bank(String name, int id, int balance) {
-        this.name = name;
-        this.id = id;
-        this.balance = balance;
+class Circle extends TwoD {
+    double r;
+
+    static void area(double r) {
+        System.out.println("Circle area = " + 3.1416 * r * r);
     }
+}
 
-    void displayDetails() {
-        System.out.println("Name: " + name);
-        System.out.println("ID: " + id);
-        System.out.println("Balance: " + balance);
+class Square extends TwoD {
+    double l;
+
+    void area(double l) {
+        System.out.println("Square area = " + l * l);
+    }
+}
+
+class Triangle extends TwoD {
+    double a, b;
+
+    void area(double a, double b) {
+        System.out.println("Triangle area = " + 0.5 * a * b);
+    }
+}
+
+class ThreeD extends Shape {
+}
+
+class Sphere extends ThreeD {
+    double r;
+
+    void area(double r) {
+        System.out.println("Sphere area = " + 4 * 3.1416 * r * r);
+    }
+}
+
+class Cube extends ThreeD {
+    double a;
+
+    void area(double a) {
+        System.out.println("Cube area = " + 6 * a * a);
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sn = new Scanner(System.in);
-
-        System.out.print("Enter name: ");
-        String name = sn.nextLine();
-
-        System.out.print("Enter ID: ");
-        int id = sn.nextInt();
-
-        System.out.print("Enter balance: ");
-        int balance = sn.nextInt();
-
-        Bank account = new Bank(name, id, balance);
-
-        System.out.println("\nAccount Details:");
-        account.displayDetails();
+        Circle.area(5);
+        Square s = new Square();
+        s.area(4);
+        Triangle t = new Triangle();
+        t.area(3, 6);
+        Sphere sp = new Sphere();
+        sp.area(2);
+        Cube c = new Cube();
+        c.area(3);
     }
 }

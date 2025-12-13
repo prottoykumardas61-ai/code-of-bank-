@@ -1,5 +1,3 @@
-// File: EmployeeHierarchyDemo.java
-
 class Employee {
     String name;
     int id;
@@ -37,3 +35,4 @@ public class EmployeeHierarchyDemo {
         mgr.displayInfo();
     }
 }
+
